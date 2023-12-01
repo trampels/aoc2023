@@ -4,10 +4,6 @@ print("Hello Advent Of Code 2023 - December 01")
 
 print("trebuchet?! - dec01.data")
 
-# Using readlines()
-file1 = open('dec01.data', 'r')
-Lines = file1.readlines()
-
 # string processing, get each the first and last digit
 # build line value as first * 10 + last
 # sum of all values
@@ -41,12 +37,14 @@ def string_value(s):
 result = 0
 count = 0
 
+datafile = open('dec01.data', 'r')
+lines = datafile.readlines()
+
 # Strips the newline character
-for line in Lines:
-    count += 1
-    # string.digits
+for line in lines:
     value = string_value(line.strip())
-    result = result + value
+    result += value
+    #count += 1
     #print("Line{}: {} = {} => {} ".format(count,
     #       line.strip(), value, result))
 
